@@ -1,23 +1,22 @@
 package com.APITirage.APITIRAGE.Services;
 
 import com.APITirage.APITIRAGE.Modeles.Liste;
-import com.APITirage.APITIRAGE.Modeles.Postulant;
 
 import java.util.List;
 
 public interface ListeService {
 
-    //Fonctionnalité d'affichage d'une liste
-    List afficher ();
+
+    Iterable<Liste> afficherListe();
 
     //Fonctionnalité de suppression d'un ou plusieurs liste(s)
-    Liste supprimer (Long id);
+    String supprimerListe (long id);
 
     //Fonctionnalité de modification de liste
-    Liste modifier (Long id, Liste liste);
+    Liste modifierListe(Liste liste);
 
     //Fonctionnalité d'ajout d'une liste
-    Liste ajouter (Liste liste);
+    Liste ajouterListe(Liste liste);
 
 
 
