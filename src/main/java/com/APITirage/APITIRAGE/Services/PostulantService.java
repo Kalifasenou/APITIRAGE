@@ -10,4 +10,6 @@ public interface PostulantService {
 
     List<Postulant> lire();
 
+    List<Postulant> lire();
+
 }
