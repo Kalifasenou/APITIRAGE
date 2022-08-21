@@ -2,9 +2,8 @@ package com.APITirage.APITIRAGE.Controllers;
 
 import com.APITirage.APITIRAGE.Modeles.Excel;
 import com.APITirage.APITIRAGE.Modeles.Postulant;
-import com.APITirage.APITIRAGE.Repositories.PostulantRepository;
 import com.APITirage.APITIRAGE.Services.PostulantService;
-import com.APITirage.APITIRAGE.Services.PostulantServiceImpl;
+//import com.APITirage.APITIRAGE.Services.TirageServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +34,13 @@ public class PostulantController {
     }
 
 
+   // @RestController
+   // public static class TirageController {
+     //   @Autowired
+      //  TirageServiceImpl tirageServiceImpl;
+      //  @GetMapping(value = "/tirer/{id}")
+       // Iterable<Object[]> tirerAleatoirement(@PathVariable long id) {
+        //    return tirageServiceImpl.tirerAleatoirement(id);
+      //  }
+   // }
 }
