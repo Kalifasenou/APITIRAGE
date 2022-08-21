@@ -22,4 +22,5 @@ public class PostulantServiceImpl implements PostulantService {
     public List<Postulant> lire() {
         return null;
     }
+
 }
