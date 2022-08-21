@@ -16,12 +16,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
+import java.util.List;
 
 @Service
 public class PostulantServiceImpl implements PostulantService{
     @Override
     public void importer(Postulant postulants) {
 
+    }
+
+    @Override
+    public List<Postulant> lire() {
+        return null;
     }
     /*
     *
