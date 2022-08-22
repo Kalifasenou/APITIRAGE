@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -16,7 +17,8 @@ public class Tirage {
     @Column(name = "id", nullable = false)
     private Long id;
     private String libelletirage;
+    private String dateTirage;
     @ManyToOne
-    @JoinColumn(name = "id_postulant")
-    private Postulant postulant;
+    @JoinColumn(name = "id_liste")
+    private Liste liste;
 }

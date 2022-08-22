@@ -10,24 +10,9 @@ public class ListeController {
     @Autowired
     ListeService listeService;
 
-    @GetMapping(value = "/liste")
-    public Iterable<Liste> afficherListe() {
-        return listeService.afficherListe();
-    }
+    @PostMapping("/crealiste")
+    public Liste create(@RequestBody Liste liste){
 
-    @PostMapping(value = "/creerliste")
-    public Liste creerListe(Liste liste) {
-        return listeService.ajouterListe(liste);
+        return  listeService.CreerListe(liste);
     }
-
-    @PutMapping(value = "/modifierliste")
-    public Liste modifierListe(Liste liste) {
-        return listeService.modifierListe(liste);
-    }
-
-    @DeleteMapping(value = "/supprimerliste/{id}")
-    public String supprimerListe(@PathVariable long id) {
-        return listeService.supprimerListe(id);
-    }
-
 }

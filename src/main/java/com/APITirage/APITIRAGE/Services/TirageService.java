@@ -7,5 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface TirageService {
-    Iterable<Object[]> tirerAleatoirement(long id);
+
+    List<Postulant> creer(Tirage tirage,List<Postulant> listAtrier,long nbre);
+
+    Tirage trouverTirageParLibelle(String libelletirage);
 }

@@ -19,6 +19,11 @@ public class PostulantServiceImpl implements PostulantService {
     }
 
     @Override
+    public List<Postulant> TrouverIdPostList(long id_liste) {
+        return postulantRepository.FINDIDPOSTLIST(id_liste);
+    }
+
+    //@Override
     public List<Postulant> lire() {
         return null;
     }
