@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -16,6 +17,6 @@ public class Liste {
     @Column(name = "id", nullable = false)
     private Long id;
     private String libelleliste;
-    private String dateliste;
+    private Date dateliste;
 
 }

@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 public class PostulantsTireServiceImpl implements PostulantsTireService{
     @Autowired
     PostulantTireRepository postulantTireRepository;
+
     @Override
-    public Object afficher() {
-        return postulantTireRepository.findAll();
+    public int creer(long id, String nom, String prenom, String numero, String email, long id_tirage) {
+        return postulantTireRepository.INSERTPOSTTIRE(id,nom,prenom,numero,email,id_tirage);
     }
 }

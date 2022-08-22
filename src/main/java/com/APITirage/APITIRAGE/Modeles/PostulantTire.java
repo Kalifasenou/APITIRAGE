@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 public class PostulantTire {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
     private  String  nom, prenom, numero, email;

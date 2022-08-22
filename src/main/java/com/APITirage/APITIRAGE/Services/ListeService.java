@@ -7,16 +7,20 @@ import java.util.List;
 public interface ListeService {
 
 
-    Iterable<Liste> afficherListe();
+    Liste CreerListe(Liste liste);
+  //  Iterable<Object[]>  AfficherListe();
+  //  Iterable<Liste> afficherListe();
+    Liste trouverListeParLibelle(String libelleliste);
+    int ajouterListe(long id);
 
     //Fonctionnalité de suppression d'un ou plusieurs liste(s)
-    String supprimerListe (long id);
+    //String supprimerListe (long id);
 
     //Fonctionnalité de modification de liste
-    Liste modifierListe(Liste liste);
+    //Liste modifierListe(Liste liste);
 
     //Fonctionnalité d'ajout d'une liste
-    Liste ajouterListe(Liste liste);
+    //Liste ajouterListe(Liste liste);
 
 
 
