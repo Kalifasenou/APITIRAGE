@@ -4,13 +4,8 @@ import com.APITirage.APITIRAGE.Modeles.Excel;
 import com.APITirage.APITIRAGE.Modeles.Liste;
 import com.APITirage.APITIRAGE.Modeles.Postulant;
 
-import com.APITirage.APITIRAGE.Repositories.PostulantRepository;
 import com.APITirage.APITIRAGE.Services.ListeService;
 import com.APITirage.APITIRAGE.Services.PostulantService;
-import com.APITirage.APITIRAGE.Services.PostulantServiceImpl;
-
-import com.APITirage.APITIRAGE.Services.PostulantService;
-//import com.APITirage.APITIRAGE.Services.TirageServiceImpl;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
