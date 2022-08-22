@@ -71,12 +71,13 @@ public class Excel {
                         switch (numeroColonne) {
                             // première colonne contenant le nom
                             case 0:
-                                postulant.setNom(formatter.formatCellValue(colonneCourante));
+                                postulant.setEmail(formatter.formatCellValue(colonneCourante));
+
                                 // System.out.println(colonneCourante.getStringCellValue());
                                 break;
                             // deuxième colonne contenant le prenom
                             case 1:
-                                postulant.setPrenom(formatter.formatCellValue(colonneCourante));
+                                postulant.setNom(formatter.formatCellValue(colonneCourante));
                                 break;
                             // troixième colonne contenant le numero
                             case 2:
@@ -84,7 +85,8 @@ public class Excel {
                                 break;
                             // dernière colonne contenant l'adresse mail
                             case 3:
-                                postulant.setEmail(formatter.formatCellValue(colonneCourante));
+                                postulant.setPrenom(formatter.formatCellValue(colonneCourante));
+
                                 break;
                             default:
                                 break;

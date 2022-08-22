@@ -28,8 +28,9 @@ public class TirageController {
         List<Postulant> post= postulantService.TrouverIdPostList(liste.getId());
 
         List<Postulant> lp= tirageService.creer(tirage,post,nbre);
-        long id_tirage =tirageService.trouverTirageParLibelle(tirage.getLibelletirage()).getId();
+        Long id_tirage =tirageService.trouverTirageParLibelle(tirage.getLibelletirage()).getId();
         for (Postulant p :lp){
+
             postulantsTireService.creer(p.getId(),p.getNom(),p.getPrenom(),p.getNumero(),p.getEmail(),id_tirage);
         }
         return "succes";

@@ -9,6 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="postulanttire")
 public class PostulantTire {
     @Id
     @Column(name = "id", nullable = false)

@@ -17,7 +17,7 @@ public class Tirage {
     @Column(name = "id", nullable = false)
     private Long id;
     private String libelletirage;
-    private Date dateTirage;
+    private String dateTirage;
     @ManyToOne
     @JoinColumn(name = "id_liste")
     private Liste liste;

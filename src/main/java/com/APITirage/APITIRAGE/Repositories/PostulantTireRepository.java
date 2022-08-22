@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 public interface PostulantTireRepository extends CrudRepository<PostulantTire,Long> {
     @Modifying
     @Transactional
-    @Query(value="INSERT INTO PostulantTire(id,nom,prenom,numero,email,id_tirage)VALUES(?,?,?,?,?,?);",nativeQuery = true)
+    @Query(value="INSERT INTO postulanttire(id,nom,prenom,numero,email,id_tirage)VALUES(?,?,?,?,?,?);",nativeQuery = true)
     public int INSERTPOSTTIRE(long id,String nom,String prenom,String numero,String email, long id_tirage);
 
 }
