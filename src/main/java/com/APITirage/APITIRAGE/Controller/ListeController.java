@@ -10,7 +10,7 @@ public class ListeController {
     @Autowired
     ListeService listeService;
 
-    @PostMapping("/crealiste")
+    @PostMapping("/creerliste")
     public Liste create(@RequestBody Liste liste){
 
         return  listeService.CreerListe(liste);
