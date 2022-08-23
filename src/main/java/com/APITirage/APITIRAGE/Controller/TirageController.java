@@ -36,7 +36,7 @@ public class TirageController {
 
                 postulantsTireService.creer(p.getId(),p.getNom(),p.getPrenom(),p.getNumero(),p.getEmail(),id_tirage);
             }
-            return "Tirage effectué avec succès ! \uD83D\uDE09 \uD83D\uDE09";
+            return postulantsTireService.lirePostulantTireparnom(tirage.getLibelletirage());//"Tirage effectué avec succès ! \uD83D\uDE09 \uD83D\uDE09";
         } catch (Exception e) {
             return Message.ErreurReponse("Ce tirage est déjà effectué !\uD83D\uDE1E☹️ ", HttpStatus.OK);
         }
