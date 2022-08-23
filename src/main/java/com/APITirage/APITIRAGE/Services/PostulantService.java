@@ -1,6 +1,5 @@
 package com.APITirage.APITIRAGE.Services;
 
-import com.APITirage.APITIRAGE.Modeles.Liste;
 import com.APITirage.APITIRAGE.Modeles.Postulant;
 
 import java.util.List;
@@ -11,4 +10,5 @@ Postulant ajouter(Postulant postulant);
 
     List<Postulant> TrouverIdPostList(long id_liste);
 
+    void supprimerPostulant(Long id);
 }

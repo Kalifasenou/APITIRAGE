@@ -5,8 +5,6 @@ import com.APITirage.APITIRAGE.Modeles.Postulant;
 import com.APITirage.APITIRAGE.Modeles.Tirage;
 import com.APITirage.APITIRAGE.Repositories.TirageRepository;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,7 +16,7 @@ import java.util.Random;
 public class TirageServiceImpl implements TirageService{
 
 
-     private  final TirageRepository tirageRepository;
+     private  TirageRepository tirageRepository;
     @Override
     public List<Postulant> creer(Tirage tirage, List<Postulant> listAtrier, long nbre) {
 
