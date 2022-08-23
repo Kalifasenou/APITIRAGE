@@ -1,9 +1,7 @@
 package com.APITirage.APITIRAGE.Services;
 
 import com.APITirage.APITIRAGE.Modeles.Postulant;
-
 import com.APITirage.APITIRAGE.Repositories.PostulantRepository;
-import com.APITirage.APITIRAGE.Repositories.PostulantTireRepository;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +19,11 @@ public class PostulantServiceImpl implements PostulantService {
     @Override
     public List<Postulant> TrouverIdPostList(long id_liste) {
         return postulantRepository.FINDIDPOSTLIST(id_liste);
+    }
+
+    @Override
+    public void supprimerPostulant(Long id) {
+        postulantRepository.deleteById(id);
     }
 
     //@Override

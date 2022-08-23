@@ -6,7 +6,6 @@ import com.APITirage.APITIRAGE.Modeles.Postulant;
 import com.APITirage.APITIRAGE.Modeles.Tirage;
 import com.APITirage.APITIRAGE.Services.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +19,8 @@ public class TirageController {
    private final    TirageService tirageService;
   private final ListeService listeService;
    private final PostulantService postulantService;
+   @Autowired
+   private PostulantServiceImpl postulantServiceIml;
   private final    PostulantsTireService postulantsTireService;
     @Autowired
     TirageServiceImpl tirageServiceImpl;
@@ -35,6 +36,7 @@ public class TirageController {
             for (Postulant p :lp){
 
                 postulantsTireService.creer(p.getId(),p.getNom(),p.getPrenom(),p.getNumero(),p.getEmail(),id_tirage);
+                postulantServiceIml.supprimerPostulant(p.getId());
             }
             return postulantsTireService.lirePostulantTireparnom(tirage.getLibelletirage());//"Tirage effectué avec succès ! \uD83D\uDE09 \uD83D\uDE09";
         } catch (Exception e) {
