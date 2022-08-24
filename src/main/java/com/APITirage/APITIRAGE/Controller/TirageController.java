@@ -7,7 +7,7 @@ import com.APITirage.APITIRAGE.Modeles.Tirage;
 import com.APITirage.APITIRAGE.Services.*;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +28,8 @@ public class TirageController {
     @PostMapping(value = "/createTirage/{libelleliste}/{nbre}")
 
     public Object create(@RequestBody Tirage tirage, @PathVariable String libelleliste, @PathVariable long nbre){
+
+
         try {
 
             Liste liste =listeService.trouverListeParLibelle(libelleliste);
@@ -43,7 +45,7 @@ public class TirageController {
             return postulantsTireService.lirePostulantTireparnom(tirage.getLibelletirage());//"Tirage effectué avec succès ! \uD83D\uDE09 \uD83D\uDE09";
         } catch (IllegalArgumentException e) {
             return Message.ErreurReponse("\uD83D\uDE1E☹️ Vous ne pouvez pas tirer "+nbre+" du nombre de postulants restants", HttpStatus.OK);
-        } catch (IncorrectResultSizeDataAccessException e) {
+        } catch (DataIntegrityViolationException e) {
             return Message.ErreurReponse("Ce tirage est déjà effectué !\uD83D\uDE1E☹️ ", HttpStatus.OK);
         }
 
