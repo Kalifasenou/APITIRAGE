@@ -11,7 +11,9 @@ public interface ListeService {
   //  Iterable<Object[]>  AfficherListe();
   //  Iterable<Liste> afficherListe();
     Liste trouverListeParLibelle(String libelleliste);
-    int ajouterListe(long id);
+    int nombreListe();
+    List<Liste> lister();
+    List<Object> listerNom();
 
     //Fonctionnalité de suppression d'un ou plusieurs liste(s)
     //String supprimerListe (long id);

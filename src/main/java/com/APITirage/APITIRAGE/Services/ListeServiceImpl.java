@@ -25,8 +25,25 @@ public class ListeServiceImpl implements ListeService {
     }
 
     @Override
-    public int ajouterListe(long id) {
-        return 0;
+    public int nombreListe() {
+        List<Liste> liste = (List<Liste>) listeRepository.findAll();
+        return liste.size();
+    }
+
+    @Override
+    public List<Liste> lister() {
+        return (List<Liste>) listeRepository.findAll();
+    }
+
+    @Override
+    public List<Object> listerNom() {
+        return listeRepository.afficherNomListe();
+        /*ArrayList<String> retour = new ArrayList<>();
+        List<Liste> resultat= lister();
+        for (Liste listes:resultat) {
+            retour.add(listes.getLibelleliste());
+        }
+        return retour;*/
     }
 
     // @Override
