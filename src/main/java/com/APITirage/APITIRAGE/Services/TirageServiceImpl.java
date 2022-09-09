@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -17,6 +18,24 @@ public class TirageServiceImpl implements TirageService{
 
 
      private  TirageRepository tirageRepository;
+
+    @Override
+    public int nombreTirage() {
+        List<Tirage> tirages = tirageRepository.findAll();
+        return tirages.size();
+    }
+
+    @Override
+    public int nombreListeTiree() {
+        List<Object> listetire = tirageRepository.nombreListeTiree();
+        return listetire.size();
+    }
+
+    @Override
+    public int listerNombreTirage(String nomliste) {
+        return tirageRepository.tirageParListe(nomliste).size();
+    }
+
     @Override
     public List<Postulant> creer(Tirage tirage, List<Postulant> listAtrier, long nbre) {
 
@@ -33,6 +52,7 @@ public class TirageServiceImpl implements TirageService{
             listAtrier.remove(listAtrier.get(idAct));
 
         }
+        tirage.setDateTirage(new Date());
         tirageRepository.save(tirage);
         return list;
     }
@@ -40,5 +60,10 @@ public class TirageServiceImpl implements TirageService{
     @Override
     public Tirage trouverTirageParLibelle(String libelleliste) {
          return tirageRepository.findBylibelletirage(libelleliste);
+    }
+
+    @Override
+    public List<Tirage> afficherTirage() {
+        return tirageRepository.findAll();
     }
 }

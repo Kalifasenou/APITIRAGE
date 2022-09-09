@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public interface ListeRepository extends CrudRepository<Liste,Long> {
     Liste findBylibelleliste(String libelleliste);
@@ -15,4 +16,6 @@ public interface ListeRepository extends CrudRepository<Liste,Long> {
     @Transactional
     @Query(value = "INSERT into postulant(id_liste)values(:id_liste);",nativeQuery = true)
     public int INSERTIDLIST(@Param("id_liste") long id_liste);
+    @Query(value = "Select liste.libelleliste from liste;",nativeQuery = true)
+    List<Object> afficherNomListe();
 }

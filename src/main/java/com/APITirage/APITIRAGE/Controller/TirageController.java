@@ -25,6 +25,24 @@ public class TirageController {
   private final    PostulantsTireService postulantsTireService;
     @Autowired
     TirageServiceImpl tirageServiceImpl;
+    @GetMapping("/nombretirage")
+    int nombreTirage() {
+        return tirageService.nombreTirage();
+    }
+
+    @GetMapping("/nombrelistetiree")
+    int nombreListeTiree() {
+        return tirageService.nombreListeTiree();
+    }
+    @GetMapping("/tirageparliste/{nomliste}")
+    int tirageParListe(@PathVariable String nomliste) {
+        return tirageService.listerNombreTirage(nomliste);
+    }
+
+    @GetMapping("/listetirages")
+    List<Tirage> listerTirage() {
+        return tirageService.afficherTirage();
+    }
     @PostMapping(value = "/createTirage/{libelleliste}/{nbre}")
 
     public Object create(@RequestBody Tirage tirage, @PathVariable String libelleliste, @PathVariable long nbre){
