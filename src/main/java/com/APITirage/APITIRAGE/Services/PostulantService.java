@@ -11,4 +11,6 @@ Postulant ajouter(Postulant postulant);
     List<Postulant> TrouverIdPostList(long id_liste);
 
     void supprimerPostulant(Long id);
+
+    List<Postulant> affiherPostulants();
 }

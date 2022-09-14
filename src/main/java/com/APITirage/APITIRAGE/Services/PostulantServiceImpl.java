@@ -26,6 +26,11 @@ public class PostulantServiceImpl implements PostulantService {
         postulantRepository.deleteById(id);
     }
 
+    @Override
+    public List<Postulant> affiherPostulants() {
+        return (List<Postulant>) postulantRepository.findAll();
+    }
+
     //@Override
     public List<Postulant> lire() {
         return null;

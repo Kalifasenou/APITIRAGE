@@ -19,6 +19,7 @@ import java.util.List;
 
 @Controller
 @Data @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/postulants")
 public class PostulantController {
 
@@ -38,6 +39,10 @@ public class PostulantController {
         }
 
         return Excel.postulantsExcel(file);
+    }
+    @GetMapping("/afficher")
+    public List<Postulant> getPostulants() {
+        return postulantService.affiherPostulants();
     }
 
 
