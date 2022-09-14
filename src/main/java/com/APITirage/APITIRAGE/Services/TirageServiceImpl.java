@@ -37,6 +37,11 @@ public class TirageServiceImpl implements TirageService{
     }
 
     @Override
+    public List<Object> toutTirage(Long id_liste) {
+        return tirageRepository.tout(id_liste);
+    }
+
+    @Override
     public List<Postulant> creer(Tirage tirage, List<Postulant> listAtrier, long nbre) {
 
         Random rand = new Random();
@@ -65,5 +70,10 @@ public class TirageServiceImpl implements TirageService{
     @Override
     public List<Tirage> afficherTirage() {
         return tirageRepository.findAll();
+    }
+
+    @Override
+    public List<Object> nombreTirageparListe() {
+        return tirageRepository.nombreTirageparListe();
     }
 }

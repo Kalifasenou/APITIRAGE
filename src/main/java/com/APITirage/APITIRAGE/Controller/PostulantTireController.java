@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Data
 @RequestMapping("/tire")
 @CrossOrigin(origins = "http://localhost:4200")
+
 public class PostulantTireController {
     @Autowired
     PostulantsTireServiceImpl postulantsTireServiceImpl;

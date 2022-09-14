@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tirage")
 @AllArgsConstructor
+@CrossOrigin
 public class TirageController {
    private final    TirageService tirageService;
   private final ListeService listeService;
@@ -43,6 +44,15 @@ public class TirageController {
     List<Tirage> listerTirage() {
         return tirageService.afficherTirage();
     }
+
+    @GetMapping("/ntpl")
+    List<Object>nombreTirageparListe(){
+        return tirageService.nombreTirageparListe();
+    }
+    @GetMapping("/tiragesuruneliste/{id}")
+    Object toutTirage(@PathVariable Long id){
+        return tirageService.toutTirage(id);
+    }
     @PostMapping(value = "/createTirage/{libelleliste}/{nbre}")
 
     public Object create(@RequestBody Tirage tirage, @PathVariable String libelleliste, @PathVariable long nbre){
@@ -53,6 +63,7 @@ public class TirageController {
             Liste liste =listeService.trouverListeParLibelle(libelleliste);
             List<Postulant> post= postulantService.TrouverIdPostList(liste.getId());
 
+            tirage.setListe(new Liste(listeService.trouverListeParLibelle(libelleliste).getId()));
             Object lp= tirageService.creer(tirage,post,nbre);
             Long id_tirage =tirageService.trouverTirageParLibelle(tirage.getLibelletirage()).getId();
             for (Postulant p :(List<Postulant>)lp){
