@@ -16,7 +16,11 @@ public class Liste {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Column(unique = true)
     private String libelleliste;
     private Date dateliste;
 
+    public Liste(Long id) {
+        this.id = id;
+    }
 }

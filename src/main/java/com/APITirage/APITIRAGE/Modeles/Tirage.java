@@ -1,5 +1,6 @@
 package com.APITirage.APITIRAGE.Modeles;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class Tirage {
     private Date dateTirage;
     @ManyToOne
     @JoinColumn(name = "id_liste")
+    @JsonIgnore
     private Liste liste;
 }
