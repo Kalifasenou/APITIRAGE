@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tirage")
 @AllArgsConstructor
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class TirageController {
    private final    TirageService tirageService;
   private final ListeService listeService;
@@ -36,7 +36,7 @@ public class TirageController {
         return tirageService.nombreListeTiree();
     }
     @GetMapping("/tirageparliste/{nomliste}")
-    int tirageParListe(@PathVariable String nomliste) {
+    Object tirageParListe(@PathVariable String nomliste) {
         return tirageService.listerNombreTirage(nomliste);
     }
 

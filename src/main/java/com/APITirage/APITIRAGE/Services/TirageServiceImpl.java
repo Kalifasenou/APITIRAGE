@@ -32,7 +32,7 @@ public class TirageServiceImpl implements TirageService{
     }
 
     @Override
-    public int listerNombreTirage(String nomliste) {
+    public Object listerNombreTirage(String nomliste) {
         return tirageRepository.tirageParListe(nomliste).size();
     }
 

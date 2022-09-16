@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/liste")
 public class ListeController {
     @Autowired
@@ -25,6 +25,10 @@ public class ListeController {
     @GetMapping("/lister")
     List<Liste> lister(){
         return listeService.lister();
+    }
+    @GetMapping("/tiree")
+    List<Liste> listerTiree() {
+        return listeService.listerTiree();
     }
     @GetMapping("/listernom")
     List<Object> listerNom(){

@@ -11,7 +11,7 @@ public interface TirageService {
 
     int nombreListeTiree();
 
-    int listerNombreTirage(String nomliste);
+    Object listerNombreTirage(String nomliste);
     List<Object> toutTirage(Long id_liste);
     List<Postulant> creer(Tirage tirage,List<Postulant> listAtrier,long nbre);
 
