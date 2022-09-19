@@ -34,4 +34,8 @@ public class ListeController {
     List<Object> listerNom(){
         return listeService.listerNom();
     }
+    @GetMapping("/affichernomliste/{idliste}")
+    String afficherNom(@PathVariable long idliste) {
+        return listeService.afficherNom(idliste);
+    }
 }

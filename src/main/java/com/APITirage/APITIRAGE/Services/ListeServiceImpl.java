@@ -51,6 +51,11 @@ public class ListeServiceImpl implements ListeService {
         return listeRepository.trouverListeTiree();
     }
 
+    @Override
+    public String afficherNom(long idliste) {
+        return listeRepository.afficherNom(idliste);
+    }
+
     // @Override
    // public Iterable<Object[]> AfficherListe() {
     //    return null;
