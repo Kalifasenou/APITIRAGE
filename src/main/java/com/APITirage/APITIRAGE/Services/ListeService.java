@@ -15,8 +15,10 @@ public interface ListeService {
     List<Liste> lister();
     List<Object> listerNom();
 
+  List<Liste> listerTiree();
 
-    //Fonctionnalité de suppression d'un ou plusieurs liste(s)
+
+  //Fonctionnalité de suppression d'un ou plusieurs liste(s)
     //String supprimerListe (long id);
 
     //Fonctionnalité de modification de liste

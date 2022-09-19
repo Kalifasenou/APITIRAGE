@@ -18,4 +18,6 @@ public interface ListeRepository extends CrudRepository<Liste,Long> {
     public int INSERTIDLIST(@Param("id_liste") long id_liste);
     @Query(value = "Select liste.libelleliste from liste;",nativeQuery = true)
     List<Object> afficherNomListe();
+    @Query(value = "SELECT DISTINCT liste.* FROM liste, tirage WHERE liste.id=tirage.id_liste;",nativeQuery = true)
+    List<Liste> trouverListeTiree();
 }
