@@ -76,4 +76,9 @@ public class TirageServiceImpl implements TirageService{
     public List<Object> nombreTirageparListe() {
         return tirageRepository.nombreTirageparListe();
     }
+
+    @Override
+    public Tirage trouverParId(long idtirage) {
+        return tirageRepository.trouverById(idtirage);
+    }
 }

@@ -52,7 +52,7 @@ public class ListeServiceImpl implements ListeService {
     }
 
     @Override
-    public String afficherNom(long idliste) {
+    public Liste afficherNom(long idliste) {
         return listeRepository.afficherNom(idliste);
     }
 

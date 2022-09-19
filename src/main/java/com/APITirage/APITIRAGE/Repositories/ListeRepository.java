@@ -20,6 +20,6 @@ public interface ListeRepository extends CrudRepository<Liste,Long> {
     List<Object> afficherNomListe();
     @Query(value = "SELECT DISTINCT liste.* FROM liste, tirage WHERE liste.id=tirage.id_liste;",nativeQuery = true)
     List<Liste> trouverListeTiree();
-    @Query(value = "Select liste.libelleliste from liste where liste.id=?;",nativeQuery = true)
-    String afficherNom(long idliste);
+    @Query(value = "Select * from liste where liste.id=?;",nativeQuery = true)
+    Liste afficherNom(long idliste);
 }

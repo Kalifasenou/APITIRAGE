@@ -19,4 +19,6 @@ public interface TirageService {
     List<Tirage> afficherTirage();
 
     List<Object>nombreTirageparListe();
+
+    Tirage trouverParId(long idtirage);
 }

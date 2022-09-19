@@ -79,5 +79,9 @@ public class TirageController {
         }
 
     }
+    @GetMapping("/tirageparnom/{libelletirage}")
+    Tirage getTirageById(@PathVariable String libelletirage) {
+        return tirageService.trouverTirageParLibelle(libelletirage);
+    }
 
 }

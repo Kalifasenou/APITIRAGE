@@ -17,7 +17,7 @@ public interface ListeService {
 
   List<Liste> listerTiree();
 
-  String afficherNom(long idliste);
+  Liste afficherNom(long idliste);
 
 
   //Fonctionnalité de suppression d'un ou plusieurs liste(s)

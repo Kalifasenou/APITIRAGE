@@ -19,7 +19,6 @@ public interface TirageRepository extends JpaRepository <Tirage, Long>{
 
     @Query(value = "SELECT COUNT(*) FROM `tirage`,liste WHERE tirage.id_liste=liste.id GROUP BY id_liste;", nativeQuery = true )
     List<Object>nombreTirageparListe();
-
-
-
+    @Query(value = "Select * from tirage where tirage.id=?;",nativeQuery = true)
+    Tirage trouverById(long idtirage);
 }
